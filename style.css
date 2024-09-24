@@ -1,212 +1,507 @@
-/* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Corpo */
-body {
-  background-color: #f5f5f5; 
-  color: #333;
-  line-height: 1.6;
+/* whatsapp contato */
+.whats-fixed {
+    width: 50px;
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
 }
 
-/* Container principal */
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.link-whatsapp {
+    cursor: pointer;
 }
 
-/* Seções */
-section {
-  padding: 40px 20px;
+/* sessao dos professores */
+.professores {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background-color: gray;
 }
 
-section:nth-child(even) {
-  background-color: #f9f9f9; 
-}
-
-h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #0366d6; 
-}
-
-/* Curso */
-.course {
+.ul-prof {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
-.course div {
-  width: calc(33.33% - 20px); 
-  background: #fff; 
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* slide de professores */
+.slide-prof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* botoes de troca de slide dos professores */
+.btn {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  position: absolute;
+  border-radius: 60px;
   text-align: center;
-}
-
-.course img {
-  max-width: 100%;
-  height: auto;
-  width: 100px;
-  margin-bottom: 10px;
-}
-
-.course p {
-  margin-bottom: 10px;
-}
-
-.course button {
-  background-color: #0366d6; 
-  color: white;
-  border: none;
-  padding: 10px 20px;
+  font-size: 40px;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  z-index: 3;
 }
 
-.course button:hover {
-  background-color: #0056b3; 
+.btn.btn-next {
+  right: 100px;
+  color: antiquewhite;
 }
 
-/* Estilo para a seção de alunos */
-.students {
-  background-color: #333; 
-  color: #fff; 
-  padding: 40px 20px;
-  text-align: center;
+.btn.btn-next::before {
+  content: '>';
 }
 
-.students h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #0056b3; 
+.btn.btn-back {
+  left: 100px;
+  color: antiquewhite;
 }
 
-.students div {
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #fff; 
-  border-radius: 5px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+.btn.btn-back::before {
+  content: '<';
 }
 
-.students p {
-  margin-bottom: 10px;
-  color: #333; 
-}
-
-.students p:first-child {
-  font-size: 3em;
-  color: #0056b3; 
-}
-
-
-
-/* Estilo para a seção de depoimentos */
-.testimonials {
-  background-color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #0056b3; 
-}
-
-.testimonials div {
-  margin: 40px auto;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #f5f5f5; 
-  border-radius: 5px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.testimonials img {
-  max-width: 100px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-.testimonials p {
-  margin-bottom: 10px;
-  color: #333;
-  font-style: italic;
-}
-
-.testimonials button {
-  background-color: #0056b3;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.testimonials button:hover {
-  background-color: #003f7f;
-}
-
-/* Garantia */
-.garantee {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.garantee div {
-  margin: 20px 0;
-}
-
-.garantee p {
-  margin: 10px 0;
-}
-
-/* Principal */
-.principal {
+/* lista das imagens */
+.list-prof {
+  border: 1px solid black;
+  border-radius: 20px;
+  position: relative;
+  filter: blur(8px);
+  transition: all 1s ease-in-out;
+  margin: auto 100px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+    justify-content: center;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, 
+  rgba(253,187,45,1) 100%);
+}
+
+.list-prof.selected-prof {
+  filter: blur(0) drop-shadow(0 0 20px white);
+  position: absolute;
+  top:50%;
+  left: 40%;
+  transform: translate(-70%, -50%);
+  z-index: 3;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+}
+
+.list-prof.selected-prof .descricao-professores{
+  color: #e6e6e6;
+  display: block;
+}
+
+.img-prof{
+  width: 150px;
+    margin: auto;
+  filter: drop-shadow(0 0 20px white);
+}
+
+/* descricao dos professores */
+.descricao-professores {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+
+.descricao-professores h4 {
+  font-size: 20px;
+}
+
+.descricao-professores img {
+  width: 150px;
+  padding: 10px;
+  margin: auto;
+  filter: drop-shadow(0 0 20px white);
+}
+/* fim professores */
+
+
+/* formularios */
+.form-insc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* animacao de carregamento */
+.load-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.principal img {
-  max-width: 50%;
-  height: auto;
-  margin-right: 20px;
+.loading-icon {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #f3f3f3; 
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  margin: 20px;
 }
 
-.principal p {
-  flex: 1;
-  text-align: left;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.principal button {
-  background-color: #0366d6;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+.form-insc img {
+    width: 200px;
+}
+
+/* */
+.conteudo-form {
+    width: 500px;
+    height: 450px;
+    margin: 50px auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: #041a28;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* passos do formulario */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  
+}
+
+.campos {
+  width: 100%;
+}
+
+.step label{
+  font-size: 20px;
+  font-weight: bold;
   display: block;
-  margin-top: 10px;
-  align-self: flex-start;
 }
 
-.principal button:hover {
-  background-color: #0056b3;
+.step input {
+  color: #e6e6e6;
+  width: 90%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background: none;
 }
+
+.step #inf-phone {
+  display: block;
+  letter-spacing: 2px;
+  padding: 5px;
+}
+
+button[disabled], button[disabled]:hover {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.2);
+  transition: 0.4s ease-in-out;
+  transform: translate(0);
+  animation: none;
+}
+
+button {
+  background: #123c56;
+  border: 1px solid #e6e6e6;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  animation: btns-efects 2s;
+  animation-direction: center;
+}
+
+@keyframes btns-efects {
+  100% {
+    background: #800080;
+  }
+  
+}
+
+button:active {
+  transform: translateY(4px);
+  transition: 0.4s ease-in-out;
+}
+
+
+.step a {
+  color: #fff;
+}
+
+.step h5 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.step h6 {
+  font-size: 20px;
+  text-align: center;
+}
+/* fim formulario */
+
+/* partr da faq */
+.faq {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+
+.conteudo-faq {
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #e6e6e6;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.conteudo-faq h2{
+  font-size: 30px;
+  font-weight: 900;
+}
+
+/* input para enviar pergunta no whatsapp */
+.inp {
+  height: 25px;
+  width: 240px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 8px;
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.inp input {
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.img-inp{
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+}
+
+/* perguntas e respostas */
+.quest p {
+  margin: 10px;
+  background-color: #fea50f;
+  width: 240px;
+  height: 70px;
+  padding: 10px;
+  font-size: 8px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quest h3 {
+  margin: 10px;
+  font-size: 15px;
+  width: 240px;
+}
+
+/*fim faq */
+
+
+
+
+/* sessão das redes sociais */
+.redes {
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* carrossel de imagens */
+.conteudo-carrossel {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+}
+
+/* img do celular de fundo */
+.cell-imgs {
+    width: 250px;
+    height: 450px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+/* caixa para alinha as imagens do carrossel */
+.carrossel {
+    border-radius: 20px;
+    width: 200px;
+    height: 160px;
+    position: absolute;
+    right: -10px;
+    top: 315px;
+    transform: translate(-50%, -50%);
+}
+
+/* caixa das imagens */
+.conteiner-imgs {
+    --s: 200px;
+    /* the image size */
+    display: grid;
+    transform-style: preserve-3d;
+    animation: rotacao-carrossel 70s linear infinite;
+    position: relative;
+}
+
+/* animação do carrossel */
+@keyframes rotacao-carrossel {
+    0% {
+        transform: perspective(450px) rotateX(-100deg) rotate(0deg);
+    }
+
+    to {
+        transform: perspective(450px) rotateX(-100deg) rotate(-360deg);
+    }
+}
+
+
+/*imgaens do carrossel */
+.conteiner-imgs>img {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: rotate(var(--_a)) translateY(100%) rotateX(90deg);
+    backface-visibility: hidden;
+    transition: all 2s;
+}
+
+.conteiner-imgs>img:nth-child(1) {
+    --_a: 0deg
+}
+
+.conteiner-imgs>img:nth-child(2) {
+    --_a: 75deg
+}
+
+.conteiner-imgs>img:nth-child(3) {
+    --_a: 140deg
+}
+
+.conteiner-imgs>img:nth-child(4) {
+    --_a: 215deg
+}
+
+.conteiner-imgs>img:nth-child(5) {
+    --_a: 290deg
+}
+
+.conteiner-imgs>img:nth-child(6) {
+    --_a: 360deg
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+/* links do meio parte das redes sociais*/
+
+.redes-sociais {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.redes-sociais .link-img {
+    width: 100px;
+}
+
+/* link youtube parte das redes sociais*/
+
+.link-img {
+    transition: all 1s ease-in-out;
+}
+
+.link-rede:hover {
+    .link-img {
+        transform: scale(1.3);
+    }
+}
+
+.img-youtube .link-img {
+    width: 200px;
+}
+/* fim das redes */
