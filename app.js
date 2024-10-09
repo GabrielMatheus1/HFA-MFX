@@ -49,7 +49,6 @@ function temporizador() {
 setInterval(temporizador, 6000);
 /* fim sessao dos professores */
 
-
 /* formulario */
 
 /* da promeira sessao do formulario p/ segunda */
@@ -77,10 +76,8 @@ inputName.addEventListener('input', () => {
     }
 });
 
-
 const stepUm = document.querySelector('#step-1');
 const stepDois = document.querySelector('#step-2');
-
 
 botaoUmForm.addEventListener('click', () => {
     
@@ -96,15 +93,11 @@ botaoUmForm.addEventListener('click', () => {
     console.log(name);
 });
 
-
-
 /* da segunda sessao do formulario p/ terceira */
 const inputPhone = document.getElementById('phone');
 const botaoDoisFormBack = document.getElementById('back-btn2');
 const botaoDoisFormNext = document.getElementById('next-btn2');
 const stepTres = document.querySelector('#step-3');
-
-
 
 botaoDoisFormBack.addEventListener('click', () => {
     
@@ -112,8 +105,6 @@ botaoDoisFormBack.addEventListener('click', () => {
     stepUm.classList.add('active');
     
 });
-
-
 
 inputPhone.addEventListener('input', () => {
     
@@ -123,8 +114,6 @@ inputPhone.addEventListener('input', () => {
         botaoDoisFormNext.disabled = true;
     }
 });
-
-
 
 botaoDoisFormNext.addEventListener('click', () => {
     
@@ -143,7 +132,6 @@ function phoneValide(inputPhone) {
     const regex = /^(\+55\s?)?\(?\d{2}\)?\s?\d{4,5}\d{4}$/;
     return regex.test(inputPhone);
 }
-
 
 /* da terceira sessao do formulario p/ quarta e ultima */
 const inputEmail = document.getElementById('email');
@@ -178,11 +166,21 @@ botaoTresFormNext.addEventListener('click', () => {
     }
 });
 
-
 botaoTresFormBack.addEventListener('click', () => {
     
     stepTres.classList.remove('active');
     stepDois.classList.add('active');
+});
+
+var form = document.getElementById('form');
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+  }).then(response => response.json())
+    .then(data => {
+    });
 });
 /* fim formulario */
 
