@@ -1,9 +1,9 @@
 # *HFA LANDING PAGE*
 
 
-Fizemos uma pagina de capitura para atrair novos usuarios, conhechida como landing page, este projeto é da HFA com parceria de alunos da MFX academy.
+Fizemos uma pagina de captura para atrair novos usuários, conhecida como Landing Page, este projeto é da HFA com parceria de alunos da MFX academy.
+Projeto de desenvolvido por:
 
-Porjeto de desenvolvido por:
-* Name;
-* Name;
-* Name.
+Name;
+Name;
+Name.
