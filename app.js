@@ -46,7 +46,7 @@ function temporizador() {
   rotateImages();
 }
 
-setInterval(temporizador, 6000);
+setInterval(temporizador, 10000);
 /* fim sessao dos professores */
 
 /* formulario */
