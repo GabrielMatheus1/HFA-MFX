@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  min-width: 760px;
+}
+
 /* whatsapp contato */
 .whats-fixed {
   width: 50px;
@@ -20,7 +24,7 @@
 /* sessao dos professores */
 .professores {
   width: 100%;
-  height: 500px;
+  height: 600px;
   position: relative;
   background-image: URL('imgs/Professores-FAQ.png');
   background-position: center;
@@ -36,7 +40,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  height: 600px;
+  height: 100%;
   width: 900px;
 }
 
@@ -63,7 +67,7 @@
 }
 
 .btn.btn-next {
-  right: 60px;
+  right: 16%;
   color: antiquewhite;
   background: #fea50f;
   display:flex;
@@ -76,7 +80,7 @@
 }
 
 .btn.btn-back {
-  left: 60px;
+  left: 16%;
   color: antiquewhite;
   background: #fea50f;
   display:flex;
@@ -95,8 +99,8 @@
   position: relative;
   filter: blur(10px);
   transition: all 1s ease-in-out;
-  margin: auto 70px;
-  width: 280px;
+  margin: auto 85px;
+  width: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +121,7 @@
   width: 280px;
 }
 
-.list-prof.selected-prof .descricao-professores{
+.list-prof.selected-prof .desc-professores{
   color: #e6e6e6;
   display: block;
   z-index: 4;
@@ -133,7 +137,7 @@
 }
 
 /* descricao dos professores */
-.descricao-professores {
+.desc-professores {
   width: 100%;
   height: 150px;
   padding: 10px;
@@ -143,18 +147,18 @@
   text-shadow: 0px 0px 10px rgba(0, 0, 0);
 }
 
-.descricao-professores p {
+.desc-professores p {
   font-size: 18px;
   color: #fea50f;
 }
 
-.descricao-professores h4 {
+.desc-professores h4 {
   font-size: 22px;
   color: #fff;
   letter-spacing: 2px;
 }
 
-.descricao-professores img {
+.desc-professores img {
   width: 80px;
   padding: 10px;
   margin: auto;
