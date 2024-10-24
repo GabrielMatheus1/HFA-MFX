@@ -31,12 +31,13 @@
 .ul-prof {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  height: 100%;
+  height: 600px;
+  width: 900px;
 }
 
 /* slide de professores */
@@ -62,8 +63,12 @@
 }
 
 .btn.btn-next {
-  right: 100px;
+  right: 60px;
   color: antiquewhite;
+  background: #fea50f;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn.btn-next::before {
@@ -71,8 +76,12 @@
 }
 
 .btn.btn-back {
-  left: 100px;
+  left: 60px;
   color: antiquewhite;
+  background: #fea50f;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn.btn-back::before {
@@ -81,52 +90,68 @@
 
 /* lista das imagens */
 .list-prof {
-  border: 1px solid black;
+  border: 1px solid #e6e6e6;
   border-radius: 20px;
   position: relative;
-  filter: blur(8px);
+  filter: blur(10px);
   transition: all 1s ease-in-out;
-  margin: auto 100px;
+  margin: auto 70px;
+  width: 280px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 41%, 
+  align-items: center;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 41%, 
   rgba(253,187,45,1) 100%);
+  overflow: hidden;
 }
 
 .list-prof.selected-prof {
-  filter: blur(0) drop-shadow(0 0 20px white);
+  filter: blur(0) drop-shadow(10px 10px 10px);
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 40%;
-  transform: translate(-70%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 3;
   transition: all 1s ease-in-out;
   overflow: hidden;
+  width: 280px;
 }
 
 .list-prof.selected-prof .descricao-professores{
   color: #e6e6e6;
   display: block;
+  z-index: 4;
 }
 
 .img-prof{
-  width: 120px;
+  position: relative;
+  top: 20px;
+  width: 100%;
   margin: auto;
-  filter: drop-shadow(0 0 20px white);
+  filter: drop-shadow(0 0 10x white);
+  z-index: 3;
 }
 
 /* descricao dos professores */
 .descricao-professores {
   width: 100%;
-  height: 200px;
+  height: 150px;
   padding: 10px;
   text-align: center;
   display: none;
+  filter: drop-shadow(0 0 2px black) opacity(1);
+  text-shadow: 0px 0px 10px rgba(0, 0, 0);
+}
+
+.descricao-professores p {
+  font-size: 18px;
+  color: #fea50f;
 }
 
 .descricao-professores h4 {
-  font-size: 20px;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 2px;
 }
 
 .descricao-professores img {
